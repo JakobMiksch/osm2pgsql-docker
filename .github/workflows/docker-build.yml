@@ -43,9 +43,9 @@ jobs:
           context: .
           push: true
           build-args: |
-            OSM2PGSQL_VERSION=${{ env.OSM2PGSQL_VERSION }}
-            THEMEPARK_COMMIT_HASH=${{ env.THEMEPARK_COMMIT_HASH }}
+            OSM2PGSQL_VERSION=2.0.0
+            THEMEPARK_COMMIT_HASH=b26afa5
           tags: |
             latest
-            ${{ env.OSM2PGSQL_VERSION }}-${{ env.THEMEPARK_COMMIT_HASH }}
           labels: ${{ steps.meta.outputs.labels }}
+          # ${{ env.OSM2PGSQL_VERSION }}-${{ env.THEMEPARK_COMMIT_HASH }}
