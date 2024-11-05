@@ -7,6 +7,6 @@ Docker image for [osm2pgsql](https://github.com/osm2pgsql-dev/osm2pgsql) with ad
 docker build \
   --build-arg OSM2PGSQL_VERSION=2.0.0  \
   --build-arg THEMEPARK_COMMIT_HASH=b26afa5  \
-  --tag ghcr.io/jakobmiksch/osm2pgsql-docker \
+  --tag osm2pgsql-docker \
   .
 ```
