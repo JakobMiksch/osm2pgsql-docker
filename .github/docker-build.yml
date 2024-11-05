@@ -1,15 +1,10 @@
 name: Build and Push Docker Image
 
 env:
-  OSM2PGSQL_VERSION: 2.0.0
-  THEMEPARK_COMMIT_HASH: b26afa5
-
-# on:
-#   push:
-    
-env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  OSM2PGSQL_VERSION: 2.0.0
+  THEMEPARK_COMMIT_HASH: b26afa5
 
 jobs:
   build:
@@ -35,7 +30,7 @@ jobs:
       - name: Install Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v3
-    
+
       - name: Build and push Docker Image
         uses: docker/build-push-action@v5
         with:
@@ -45,7 +40,7 @@ jobs:
           build-args:
             - OSM2PGSQL_VERSION=${{ env.OSM2PGSQL_VERSION }}
             - THEMEPARK_COMMIT_HASH=${{ env.THEMEPARK_COMMIT_HASH }}
-          tags: 
+          tags:
             - latest
             - ${{ env.OSM2PGSQL_VERSION }}-${{ env.THEMEPARK_COMMIT_HASH }}
           labels: ${{ steps.meta.outputs.labels }}
