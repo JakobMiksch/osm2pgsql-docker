@@ -4,8 +4,8 @@ env:
   OSM2PGSQL_VERSION: 2.0.0
   THEMEPARK_COMMIT_HASH: b26afa5
 
-on:
-  push:
+# on:
+#   push:
     
 env:
   REGISTRY: ghcr.io
