@@ -42,10 +42,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           context: .
           push: true
-          build-args:
-            OSM2PGSQL_VERSION: ${{ env.OSM2PGSQL_VERSION }}
-            THEMEPARK_COMMIT_HASH: ${{ env.THEMEPARK_COMMIT_HASH }}
-          tags:
-            - latest
-            - ${{ env.OSM2PGSQL_VERSION }}-${{ env.THEMEPARK_COMMIT_HASH }}
+          build-args: |
+            OSM2PGSQL_VERSION=${{ env.OSM2PGSQL_VERSION }}
+            THEMEPARK_COMMIT_HASH=${{ env.THEMEPARK_COMMIT_HASH }}
+          tags: |
+            latest
+            ${{ env.OSM2PGSQL_VERSION }}-${{ env.THEMEPARK_COMMIT_HASH }}
           labels: ${{ steps.meta.outputs.labels }}
