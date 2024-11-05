@@ -1,9 +1,9 @@
 name: Build and Push Docker Image
 
 on:
+  pull_request:
   push:
-    # branches: [main]
-    branches: [github-action-build-docker]
+    branches: [main, github-action-build-docker]
 
 env:
   REGISTRY: ghcr.io
