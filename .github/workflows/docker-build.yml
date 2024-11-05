@@ -43,8 +43,8 @@ jobs:
           context: .
           push: true
           build-args:
-            - OSM2PGSQL_VERSION=${{ env.OSM2PGSQL_VERSION }}
-            - THEMEPARK_COMMIT_HASH=${{ env.THEMEPARK_COMMIT_HASH }}
+            OSM2PGSQL_VERSION: ${{ env.OSM2PGSQL_VERSION }}
+            THEMEPARK_COMMIT_HASH: ${{ env.THEMEPARK_COMMIT_HASH }}
           tags:
             - latest
             - ${{ env.OSM2PGSQL_VERSION }}-${{ env.THEMEPARK_COMMIT_HASH }}
